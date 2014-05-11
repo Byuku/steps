@@ -11,8 +11,8 @@
 @interface STNoteSpriteNode : SKSpriteNode
 
 @property (nonatomic, strong) NSString *soundPath;
-@property (nonatomic, strong) NSNumber * value;
+@property (nonatomic, strong) NSString * value;
 
-- (id)initWithName:(NSString *)name withValue:(NSNumber *)value withSound:(NSString *)soundPath;
+- (id)initWithValue:(NSString *)value withSound:(NSString *)soundPath;
 
 @end

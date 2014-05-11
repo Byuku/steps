@@ -19,6 +19,7 @@ typedef enum {
 + (void) shuffle:(NSMutableArray *) notes;
 + (NSMutableArray *) initSequence:(NSMutableArray *) buttons;
 + (NSMutableArray *) initButtonsArray:(GameMode) mode;
++ (void) randomizeSound:(NSMutableArray *) buttons;
 
 
 @end

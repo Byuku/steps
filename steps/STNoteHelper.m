@@ -1,3 +1,4 @@
+
 //
 //  STNoteHelper.m
 //  steps
@@ -8,7 +9,7 @@
 
 #import "STNoteHelper.h"
 #import "STNoteSpriteNode.h"
-
+#import "STFileHelper.h"
 
 @implementation STNoteHelper
 
@@ -41,16 +42,45 @@
 {
     NSMutableArray * buttons = [[NSMutableArray alloc] init];
     
-    NSUInteger n = (mode == EASY) ? 4 : (mode == MEDIUM) ? 5 : 6;
+    NSUInteger n = (mode == EASY) ? 3 : (mode == MEDIUM) ? 5 : 7;
+    NSUInteger randSound = 0;
+    NSUInteger randNote = 0;
+
+    NSMutableArray * sounds = [[STFileHelper listFile:@"self ENDSWITH '.mp3'"] mutableCopy];
+    NSMutableArray * imageButton = [[STFileHelper listFile:@"self contains[c] 'space' AND self ENDSWITH '.png'"] mutableCopy
+                                    ];
     
     for (NSUInteger i = 0; i < n; ++i)
     {
-        //randoms sur des sons
-        //randoms sur les images
-        [buttons addObject:[[STNoteSpriteNode alloc] initWithName:[NSString stringWithFormat:@"note%lu", i] withValue:[NSNumber numberWithInteger:i] withSound:@"sound1"]];
+        randSound = (arc4random() % [sounds count]);
+        randNote = (arc4random() % [imageButton count]);
+        
+        [buttons addObject:[[STNoteSpriteNode alloc] initWithValue:imageButton[randNote] withSound:sounds[randSound]]];
+    
+        [sounds removeObjectAtIndex:randSound];
+        [imageButton removeObjectAtIndex:randNote];
+        
     }
     
     return buttons;
+}
+
++ (void) randomizeSound:(NSMutableArray *) buttons
+{
+    NSUInteger randSound = 0;
+
+    NSMutableArray * sounds = [[STFileHelper listFile:@"self ENDSWITH '.mp3'"] mutableCopy];
+
+    for (NSUInteger i = 0; i < [buttons count]; ++i)
+    {
+        randSound = (arc4random() % [sounds count]);
+        
+        STNoteSpriteNode * note = [buttons objectAtIndex:i];
+        note.soundPath = sounds[randSound];
+        [sounds removeObjectAtIndex:randSound];
+    }
+
+    
 }
 
 @end

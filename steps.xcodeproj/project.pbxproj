@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		EE318ABA191E832F00D5A117 /* STNoteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318AB9191E832F00D5A117 /* STNoteHelper.m */; };
 		EE318ABE191EB23D00D5A117 /* STNoteSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318ABD191EB23D00D5A117 /* STNoteSpriteNode.m */; };
+		EE318AC1191EDBFD00D5A117 /* STFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318AC0191EDBFD00D5A117 /* STFileHelper.m */; };
+		EE318ACB191EE69F00D5A117 /* Spaceship2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE318ACA191EE69F00D5A117 /* Spaceship2.png */; };
+		EE318AD0191EE9AA00D5A117 /* toto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318ACE191EE9AA00D5A117 /* toto.mp3 */; };
+		EE318AD1191EE9AA00D5A117 /* toto2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318ACF191EE9AA00D5A117 /* toto2.mp3 */; };
+		EE318AD3191EEF1F00D5A117 /* toto1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318AD2191EEF1F00D5A117 /* toto1.mp3 */; };
+		EE318AD9191EF00C00D5A117 /* Spaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE318AD8191EF00C00D5A117 /* Spaceship1.png */; };
+		EE318ADB191EF08E00D5A117 /* Spaceship3.png in Resources */ = {isa = PBXBuildFile; fileRef = EE318ADA191EF08E00D5A117 /* Spaceship3.png */; };
 		EEAD136F191E6CBF00760F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD136E191E6CBF00760F1E /* Foundation.framework */; };
 		EEAD1371191E6CBF00760F1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1370191E6CBF00760F1E /* CoreGraphics.framework */; };
 		EEAD1373191E6CBF00760F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1372191E6CBF00760F1E /* UIKit.framework */; };
@@ -19,7 +26,6 @@
 		EEAD1384191E6CBF00760F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAD1382191E6CBF00760F1E /* Main.storyboard */; };
 		EEAD1387191E6CBF00760F1E /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAD1386191E6CBF00760F1E /* STViewController.m */; };
 		EEAD138A191E6CBF00760F1E /* STMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAD1389191E6CBF00760F1E /* STMyScene.m */; };
-		EEAD138C191E6CBF00760F1E /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAD138B191E6CBF00760F1E /* Spaceship.png */; };
 		EEAD138E191E6CBF00760F1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAD138D191E6CBF00760F1E /* Images.xcassets */; };
 		EEAD1395191E6CBF00760F1E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1394191E6CBF00760F1E /* XCTest.framework */; };
 		EEAD1396191E6CC000760F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD136E191E6CBF00760F1E /* Foundation.framework */; };
@@ -43,6 +49,14 @@
 		EE318AB9191E832F00D5A117 /* STNoteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNoteHelper.m; sourceTree = "<group>"; };
 		EE318ABC191EB23D00D5A117 /* STNoteSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNoteSpriteNode.h; sourceTree = "<group>"; };
 		EE318ABD191EB23D00D5A117 /* STNoteSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNoteSpriteNode.m; sourceTree = "<group>"; };
+		EE318ABF191EDBFD00D5A117 /* STFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFileHelper.h; sourceTree = "<group>"; };
+		EE318AC0191EDBFD00D5A117 /* STFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFileHelper.m; sourceTree = "<group>"; };
+		EE318ACA191EE69F00D5A117 /* Spaceship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship2.png; sourceTree = "<group>"; };
+		EE318ACE191EE9AA00D5A117 /* toto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto.mp3; sourceTree = "<group>"; };
+		EE318ACF191EE9AA00D5A117 /* toto2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto2.mp3; sourceTree = "<group>"; };
+		EE318AD2191EEF1F00D5A117 /* toto1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto1.mp3; sourceTree = "<group>"; };
+		EE318AD8191EF00C00D5A117 /* Spaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship1.png; sourceTree = "<group>"; };
+		EE318ADA191EF08E00D5A117 /* Spaceship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship3.png; sourceTree = "<group>"; };
 		EEAD136B191E6CBF00760F1E /* steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAD136E191E6CBF00760F1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEAD1370191E6CBF00760F1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,7 +73,6 @@
 		EEAD1386191E6CBF00760F1E /* STViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
 		EEAD1388191E6CBF00760F1E /* STMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMyScene.h; sourceTree = "<group>"; };
 		EEAD1389191E6CBF00760F1E /* STMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMyScene.m; sourceTree = "<group>"; };
-		EEAD138B191E6CBF00760F1E /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		EEAD138D191E6CBF00760F1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EEAD1393191E6CBF00760F1E /* stepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAD1394191E6CBF00760F1E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -116,6 +129,8 @@
 			children = (
 				EE318AB8191E832F00D5A117 /* STNoteHelper.h */,
 				EE318AB9191E832F00D5A117 /* STNoteHelper.m */,
+				EE318ABF191EDBFD00D5A117 /* STFileHelper.h */,
+				EE318AC0191EDBFD00D5A117 /* STFileHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -127,6 +142,26 @@
 				EE318ABD191EB23D00D5A117 /* STNoteSpriteNode.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		EE318ACC191EE6B600D5A117 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EE318AD8191EF00C00D5A117 /* Spaceship1.png */,
+				EE318ADA191EF08E00D5A117 /* Spaceship3.png */,
+				EE318ACA191EE69F00D5A117 /* Spaceship2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		EE318ACD191EE99B00D5A117 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				EE318AD2191EEF1F00D5A117 /* toto1.mp3 */,
+				EE318ACE191EE9AA00D5A117 /* toto.mp3 */,
+				EE318ACF191EE9AA00D5A117 /* toto2.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 		EEAD1362191E6CBF00760F1E = {
@@ -163,6 +198,8 @@
 		EEAD1376191E6CBF00760F1E /* steps */ = {
 			isa = PBXGroup;
 			children = (
+				EE318ACD191EE99B00D5A117 /* Music */,
+				EE318ACC191EE6B600D5A117 /* Images */,
 				EE318ABB191E932000D5A117 /* Model */,
 				EE318AB7191E830D00D5A117 /* Helper */,
 				EE318AB6191E825F00D5A117 /* Scene */,
@@ -170,7 +207,6 @@
 				EEAD137F191E6CBF00760F1E /* STAppDelegate.h */,
 				EEAD1380191E6CBF00760F1E /* STAppDelegate.m */,
 				EEAD1382191E6CBF00760F1E /* Main.storyboard */,
-				EEAD138B191E6CBF00760F1E /* Spaceship.png */,
 				EEAD138D191E6CBF00760F1E /* Images.xcassets */,
 				EEAD1377191E6CBF00760F1E /* Supporting Files */,
 			);
@@ -283,10 +319,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE318ADB191EF08E00D5A117 /* Spaceship3.png in Resources */,
+				EE318AD3191EEF1F00D5A117 /* toto1.mp3 in Resources */,
+				EE318ACB191EE69F00D5A117 /* Spaceship2.png in Resources */,
+				EE318AD9191EF00C00D5A117 /* Spaceship1.png in Resources */,
+				EE318AD0191EE9AA00D5A117 /* toto.mp3 in Resources */,
 				EEAD137B191E6CBF00760F1E /* InfoPlist.strings in Resources */,
 				EEAD138E191E6CBF00760F1E /* Images.xcassets in Resources */,
-				EEAD138C191E6CBF00760F1E /* Spaceship.png in Resources */,
 				EEAD1384191E6CBF00760F1E /* Main.storyboard in Resources */,
+				EE318AD1191EE9AA00D5A117 /* toto2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE318AC1191EDBFD00D5A117 /* STFileHelper.m in Sources */,
 				EE318ABA191E832F00D5A117 /* STNoteHelper.m in Sources */,
 				EE318ABE191EB23D00D5A117 /* STNoteSpriteNode.m in Sources */,
 				EEAD1387191E6CBF00760F1E /* STViewController.m in Sources */,

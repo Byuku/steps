@@ -10,14 +10,14 @@
 
 @implementation STNoteSpriteNode
 
-- (id)initWithName:(NSString *)name withValue:(NSNumber *)value withSound:(NSString *)soundPath
+- (id)initWithValue:(NSString *)value withSound:(NSString *)soundPath
 {
     self = [super init];
     
     if (self)
     {
-        self = [STNoteSpriteNode spriteNodeWithImageNamed:name];
-        self.name = name;
+        self = [STNoteSpriteNode spriteNodeWithImageNamed:value];
+        self.name = value;
         self.value = value;
         self.soundPath = soundPath;
     }

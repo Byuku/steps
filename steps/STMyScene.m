@@ -10,6 +10,8 @@
 #import "STNoteHelper.h"
 #import "STNoteSpriteNode.h"
 
+#import "STFileHelper.h"
+
 @implementation STMyScene
 {
     NSMutableArray * notes;
@@ -29,7 +31,7 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
-        
+     
     }
     return self;
 }
