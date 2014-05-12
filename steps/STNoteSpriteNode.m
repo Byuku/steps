@@ -20,6 +20,11 @@
         self.name = value;
         self.value = value;
         self.soundPath = soundPath;
+        self.anchorPoint = CGPointMake(0.5, 0.5);
+        self.xScale = 0.22;
+        self.yScale = 0.22;
+        
+
     }
     
     return self;

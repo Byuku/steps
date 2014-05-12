@@ -23,15 +23,25 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        NSArray * Pnotes = [STNoteHelper createPianoNote:self.frame];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        for (NSInteger i = 0; i < [Pnotes count] ; ++i) {
+            [self addChild:[Pnotes objectAtIndex:i]];
+        }
+
+      notes = [STNoteHelper createNote:HARD :[Pnotes mutableCopy]];
         
-        [self addChild:myLabel];
-     
+        for (NSInteger i = 0; i < [notes count] ; ++i) {
+            [self addChild:[notes objectAtIndex:i]];
+        }
+
+        
+        NSArray * staves = [STNoteHelper createStaves:Pnotes[0] :self.frame];
+        for (NSInteger i = 0; i < [staves count] ; ++i) {
+            [self addChild:[staves objectAtIndex:i]];
+        }
+        
+        
     }
     return self;
 }
@@ -39,19 +49,19 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
+//    for (UITouch *touch in touches) {
+//        CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+//        
+//        sprite.position = location;
+//        
+//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+//        
+//        [sprite runAction:[SKAction repeatActionForever:action]];
         
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+//        [self addChild:sprite];
+   // }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
