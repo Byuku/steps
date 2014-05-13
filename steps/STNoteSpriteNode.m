@@ -17,7 +17,7 @@
     if (self)
     {
         self = [STNoteSpriteNode spriteNodeWithImageNamed:value];
-        self.name = value;
+        self.name = @"note";
         self.value = value;
         self.soundPath = soundPath;
         self.zPosition = 2;

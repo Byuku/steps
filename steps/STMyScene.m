@@ -54,19 +54,29 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-        
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//        
-//        sprite.position = location;
-//        
-//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-//        
-//        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-//        [self addChild:sprite];
-   // }
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:location];
+    
+        if ([touchedNode.name isEqualToString:@"note"])
+        {
+            touchedNode.position = CGPointMake(touchedNode.position.x , touchedNode.position.y - 2);
+        }
+    
+    
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:location];
+    
+    if ([touchedNode.name isEqualToString:@"note"])
+    {
+        touchedNode.position = CGPointMake(touchedNode.position.x , touchedNode.position.y + 2);
+    }
+
 }
 
 -(void)update:(CFTimeInterval)currentTime {
