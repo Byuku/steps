@@ -52,6 +52,7 @@
         note.soundPath = sounds[randSound];
         [sounds removeObjectAtIndex:randSound];
     }
+    sounds = nil;
 }
 
 + (NSMutableArray *) createNote:(GameMode) mode :(NSMutableArray *)PNotes
@@ -65,6 +66,18 @@
     NSMutableArray * sounds = [[STFileHelper listFile:@"self ENDSWITH '.mp3'"] mutableCopy];
     NSMutableArray * imageButton = [[STFileHelper listFile:@"self contains[c] 'note' AND self ENDSWITH '.png'"] mutableCopy];
     
+    SKSpriteNode *pnote = PNotes[0];
+    
+    NSDictionary * positionNotes = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                    [NSNumber numberWithDouble:pnote.position.y + pnote.size.height/4],imageButton[0],
+                                    [NSNumber numberWithDouble:pnote.position.y],imageButton[1],
+                                    [NSNumber numberWithDouble:pnote.position.y - pnote.size.height/4],imageButton[2],
+                                    [NSNumber numberWithDouble:pnote.position.y],imageButton[3],
+                                    [NSNumber numberWithDouble:pnote.position.y + pnote.size.height/4],imageButton[4],
+                                    [NSNumber numberWithDouble:pnote.position.y],imageButton[5],
+                                    [NSNumber numberWithDouble:pnote.position.y - pnote.size.height/4],imageButton[6],
+                                    nil];
+    
     for (NSUInteger i = 0; i < n; ++i)
     {
         randSound = (arc4random() % [sounds count]);
@@ -72,15 +85,18 @@
         
         STNoteSpriteNode * note = [[STNoteSpriteNode alloc] initWithValue:imageButton[randNote] withSound:sounds[randSound]];
         
-        SKSpriteNode *pnote = PNotes[randNote];
-        note.position = CGPointMake(pnote.position.x , 50);
-        
+        pnote = PNotes[randNote];
+        note.position = CGPointMake(pnote.position.x , [positionNotes[note.value] doubleValue]);
         [buttons addObject:note];
         
         [sounds removeObjectAtIndex:randSound];
         [imageButton removeObjectAtIndex:randNote];
         [PNotes removeObjectAtIndex:randNote];
     }
+    
+    PNotes = nil;
+    imageButton = nil;
+    sounds = nil;
     
     return buttons;
 }
@@ -103,10 +119,9 @@
         b.position = CGPointMake(x, b.size.height/2);
         x+= b.size.width/1.3;
         
-        b.anchorPoint = CGPointMake(0.5, 0.5);
-        b.zPosition = -1;
-        
+        b.zPosition = 0;
         [array addObject:b];
+        b = nil;
 
     }
     return [NSArray arrayWithArray:array];
@@ -121,6 +136,7 @@
     for (NSUInteger i = 0; i < 3; ++i) {
         line = [[SKSpriteNode alloc] initWithImageNamed:@"la_linea"];
         line.size = CGSizeMake(frame.size.width, 17);
+        line.zPosition = 1;
         [array addObject:line];
     }
     
@@ -131,7 +147,9 @@
     line.position = CGPointMake(line.size.width/2, pNote.position.y);
     
     line = array[2];
-    line.position = CGPointMake(line.size.width/2, (pNote.position.y - pNote.size.height/2) + line.size.height/4);
+    line.position = CGPointMake(line.size.width/2, (pNote.position.y - pNote.size.height/2) + line.size.height/6);
+    
+    line = nil;
     
     return [NSArray arrayWithArray:array];
 }
