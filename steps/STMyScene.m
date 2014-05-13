@@ -21,7 +21,12 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        SKSpriteNode *background = [[SKSpriteNode alloc] initWithImageNamed:@"bg2"];
+        background.zPosition = -1;
+        background.position = CGPointMake(0, 0);
+        background.size = self.frame.size;
+        background.anchorPoint = CGPointMake(0, 0);
+        [self addChild:background];
         
         NSArray * Pnotes = [STNoteHelper createPianoNote:self.frame];
         

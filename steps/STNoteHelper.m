@@ -52,7 +52,6 @@
         note.soundPath = sounds[randSound];
         [sounds removeObjectAtIndex:randSound];
     }
-    sounds = nil;
 }
 
 + (NSMutableArray *) createNote:(GameMode) mode :(NSMutableArray *)PNotes
@@ -84,9 +83,9 @@
         randNote = (arc4random() % [imageButton count]);
         
         STNoteSpriteNode * note = [[STNoteSpriteNode alloc] initWithValue:imageButton[randNote] withSound:sounds[randSound]];
-        
         pnote = PNotes[randNote];
         note.position = CGPointMake(pnote.position.x , [positionNotes[note.value] doubleValue]);
+        note.size = CGSizeMake(pnote.size.width + pnote.size.width/10, pnote.size.width);
         [buttons addObject:note];
         
         [sounds removeObjectAtIndex:randSound];
@@ -94,17 +93,13 @@
         [PNotes removeObjectAtIndex:randNote];
     }
     
-    PNotes = nil;
-    imageButton = nil;
-    sounds = nil;
-    
     return buttons;
 }
 
 + (NSArray *) createPianoNote:(CGRect) frame
 {
     NSMutableArray * array = [NSMutableArray new];
-    float x = 11;
+    float x = frame.size.width/47; //11
     
     NSArray* imagesNote = [STFileHelper listFile:@"self contains[c] 'b-' AND self ENDSWITH '.png'"];
     
@@ -116,12 +111,11 @@
         b.size = CGSizeMake(frame.size.width/9, frame.size.height/2);
         
         x += b.size.width/2;
-        b.position = CGPointMake(x, b.size.height/2);
+        b.position = CGPointMake(x, b.size.height/2.1);
         x+= b.size.width/1.3;
         
         b.zPosition = 0;
         [array addObject:b];
-        b = nil;
 
     }
     return [NSArray arrayWithArray:array];
@@ -135,7 +129,7 @@
     
     for (NSUInteger i = 0; i < 3; ++i) {
         line = [[SKSpriteNode alloc] initWithImageNamed:@"la_linea"];
-        line.size = CGSizeMake(frame.size.width, 17);
+        line.size = CGSizeMake(frame.size.width, pNote.size.width/4);
         line.zPosition = 1;
         [array addObject:line];
     }
@@ -147,9 +141,7 @@
     line.position = CGPointMake(line.size.width/2, pNote.position.y);
     
     line = array[2];
-    line.position = CGPointMake(line.size.width/2, (pNote.position.y - pNote.size.height/2) + line.size.height/6);
-    
-    line = nil;
+    line.position = CGPointMake(line.size.width/2, (pNote.position.y - pNote.size.height/2) + line.size.height/3);
     
     return [NSArray arrayWithArray:array];
 }

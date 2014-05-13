@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE276E8919228C0B00A9DA32 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE276E8819228C0B00A9DA32 /* bg2.png */; };
 		EE318ABA191E832F00D5A117 /* STNoteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318AB9191E832F00D5A117 /* STNoteHelper.m */; };
 		EE318ABE191EB23D00D5A117 /* STNoteSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318ABD191EB23D00D5A117 /* STNoteSpriteNode.m */; };
 		EE318AC1191EDBFD00D5A117 /* STFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318AC0191EDBFD00D5A117 /* STFileHelper.m */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE276E8819228C0B00A9DA32 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		EE318AB8191E832F00D5A117 /* STNoteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNoteHelper.h; sourceTree = "<group>"; };
 		EE318AB9191E832F00D5A117 /* STNoteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNoteHelper.m; sourceTree = "<group>"; };
 		EE318ABC191EB23D00D5A117 /* STNoteSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNoteSpriteNode.h; sourceTree = "<group>"; };
@@ -144,6 +146,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE276E8A19228E8E00A9DA32 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		EE318AB5191E825400D5A117 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +194,7 @@
 		EE318ACC191EE6B600D5A117 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EE276E8819228C0B00A9DA32 /* bg2.png */,
 				EE318ADC192026DC00D5A117 /* b-4blue.png */,
 				EE318ADD192026DC00D5A117 /* b-5green.png */,
 				EE318ADE192026DC00D5A117 /* b-7orange.png */,
@@ -255,6 +265,7 @@
 		EEAD1376191E6CBF00760F1E /* steps */ = {
 			isa = PBXGroup;
 			children = (
+				EE276E8A19228E8E00A9DA32 /* iPad */,
 				EE318ACD191EE99B00D5A117 /* Music */,
 				EE318ACC191EE6B600D5A117 /* Images */,
 				EE318ABB191E932000D5A117 /* Model */,
@@ -399,6 +410,7 @@
 				EEAD138E191E6CBF00760F1E /* Images.xcassets in Resources */,
 				EEAD1384191E6CBF00760F1E /* Main.storyboard in Resources */,
 				EE318B051920440D00D5A117 /* toto4.mp3 in Resources */,
+				EE276E8919228C0B00A9DA32 /* bg2.png in Resources */,
 				EE318AF0192026DC00D5A117 /* b-7orange.png in Resources */,
 				EE318AF7192026DC00D5A117 /* btn-normal.png in Resources */,
 				EE318AD1191EE9AA00D5A117 /* toto2.mp3 in Resources */,
@@ -556,8 +568,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "steps/steps-Prefix.pch";
 				INFOPLIST_FILE = "steps/steps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -570,8 +584,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "steps/steps-Prefix.pch";
 				INFOPLIST_FILE = "steps/steps-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -20,8 +20,6 @@
         self.name = value;
         self.value = value;
         self.soundPath = soundPath;
-        self.anchorPoint = CGPointMake(0.5, 0.5);
-        self.size = CGSizeMake(70, 70);
         self.zPosition = 2;
     }
     
