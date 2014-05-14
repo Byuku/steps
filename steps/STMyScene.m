@@ -21,6 +21,10 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        GameMode mode = MEDIUM;
+        
+        
+        //display background
         SKSpriteNode *background = [[SKSpriteNode alloc] initWithImageNamed:@"bg2"];
         background.zPosition = -1;
         background.position = CGPointMake(0, 0);
@@ -28,13 +32,35 @@
         background.anchorPoint = CGPointMake(0, 0);
         [self addChild:background];
         
+
+        
+        //display score
+
+         SKLabelNode *labelScore = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
+        labelScore.text = [NSString stringWithFormat:@"Score : %d", 100];
+        labelScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        labelScore.fontSize = self.frame.size.height/25;
+        labelScore.fontColor = [SKColor whiteColor];
+        labelScore.position = CGPointMake(self.frame.size.width/25, self.frame.size.height - self.frame.size.height/10);
+        
+        [self addChild:labelScore];
+        
+        SKLabelNode *labelMode = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
+        labelMode.text = (mode == EASY) ? @"Easy" : (mode == MEDIUM) ? @"Medium" : @"Hard";
+        labelMode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        labelMode.fontSize = self.frame.size.height/25;
+        labelMode.fontColor = [SKColor whiteColor];
+        labelMode.position = CGPointMake(self.frame.size.width/25, self.frame.size.height - self.frame.size.height/7);
+        [self addChild:labelMode];
+        
+        // display game
         NSArray * Pnotes = [STNoteHelper createPianoNote:self.frame];
         
         for (NSInteger i = 0; i < [Pnotes count] ; ++i) {
             [self addChild:[Pnotes objectAtIndex:i]];
         }
 
-      notes = [STNoteHelper createNote:HARD :[Pnotes mutableCopy]];
+        notes = [STNoteHelper createNote:mode :[Pnotes mutableCopy]];
         
         for (NSInteger i = 0; i < [notes count] ; ++i) {
             [self addChild:[notes objectAtIndex:i]];
