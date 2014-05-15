@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "STMyScene.h"
 
 @interface STNoteHelper : NSObject
 
@@ -23,6 +24,8 @@ typedef enum {
 + (NSArray *) createPianoNote:(CGRect) frame;
 + (NSMutableArray *) createNote:(GameMode) mode :(NSMutableArray *)PNote;
 + (NSArray *) createStaves:(SKSpriteNode *)pNote :(CGRect) frame;
++ (void) addNoteIntoSequence:(NSMutableArray *)notes withSequence:(NSMutableArray *)sequence withScene:(STMyScene *)scene;
++ (void)updateActionIntoSequence:(NSMutableArray *)sequence;
 
 
 @end

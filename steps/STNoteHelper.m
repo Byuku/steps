@@ -28,16 +28,50 @@
 {
     NSMutableArray *sequence = [[NSMutableArray alloc] init];
     NSUInteger randInt = 0;
+    STNoteSpriteNode * newNote;
 
-    for (NSUInteger i = 0; i < [buttons count]; ++i)
+    for (NSUInteger i = 0; i < 3; ++i)
     {
         randInt = (arc4random() % [buttons count]);
-        [sequence addObject:[(STNoteSpriteNode*)buttons[randInt] value]];
+        newNote = [[STNoteSpriteNode alloc] initWithValue:[(STNoteSpriteNode*)buttons[randInt] value] withSound:[(STNoteSpriteNode*)buttons[randInt] soundPath]];
+        newNote.alpha = 0;
+        [sequence addObject:newNote];
     }
-    
+
     return (sequence);
 }
 
+
++ (void) addNoteIntoSequence:(NSMutableArray *)notes withSequence:(NSMutableArray *)sequence withScene:(STMyScene *)scene
+{
+    
+    NSUInteger randInt = 0;
+
+    randInt = (arc4random() % [notes count]);
+    STNoteSpriteNode *seqNote = [[STNoteSpriteNode alloc] initWithValue:[(STNoteSpriteNode*)notes[randInt] value] withSound:[(STNoteSpriteNode*)notes[randInt] soundPath]];
+
+    seqNote.alpha = 0;
+    seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:1],
+                                          [SKAction fadeOutWithDuration:2]]];
+    seqNote.size = CGSizeMake(scene.frame.size.width/9 + (scene.frame.size.width/9)/10, scene.frame.size.width/9);
+
+    [sequence addObject:seqNote];
+    [scene addChild:seqNote];
+    
+}
+
++ (void)updateActionIntoSequence:(NSMutableArray *)sequence
+{
+    STNoteSpriteNode *seqNote;
+    for (NSUInteger i = 0; i < [sequence count]; ++i)
+    {
+        seqNote = (STNoteSpriteNode*)[sequence objectAtIndex:i];
+        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:i+1],
+                                              [SKAction fadeOutWithDuration:i+1]]];
+    }
+}
+
+//maybe deprecated
 + (void) randomizeSound:(NSMutableArray *) buttons
 {
     NSUInteger randSound = 0;

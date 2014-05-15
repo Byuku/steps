@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *soundPath;
 @property (nonatomic, strong) NSString * value;
+@property (nonatomic, strong) SKAction * action;
+
 
 - (id)initWithValue:(NSString *)value withSound:(NSString *)soundPath;
 
