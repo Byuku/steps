@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE1EFD63192322C500EC9E14 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE1EFD61192322C500EC9E14 /* MyParticle.sks */; };
+		EE1EFD64192322C500EC9E14 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1EFD62192322C500EC9E14 /* spark.png */; };
 		EE276E8919228C0B00A9DA32 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE276E8819228C0B00A9DA32 /* bg2.png */; };
 		EE318ABA191E832F00D5A117 /* STNoteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318AB9191E832F00D5A117 /* STNoteHelper.m */; };
 		EE318ABE191EB23D00D5A117 /* STNoteSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EE318ABD191EB23D00D5A117 /* STNoteSpriteNode.m */; };
@@ -65,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE1EFD61192322C500EC9E14 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		EE1EFD62192322C500EC9E14 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		EE276E8819228C0B00A9DA32 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		EE318AB8191E832F00D5A117 /* STNoteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNoteHelper.h; sourceTree = "<group>"; };
 		EE318AB9191E832F00D5A117 /* STNoteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNoteHelper.m; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			name = Music;
 			sourceTree = "<group>";
 		};
+		EE838FA81923177200FC067B /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				EE1EFD61192322C500EC9E14 /* MyParticle.sks */,
+				EE1EFD62192322C500EC9E14 /* spark.png */,
+			);
+			name = Particle;
+			sourceTree = "<group>";
+		};
 		EEAD1362191E6CBF00760F1E = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		EEAD1376191E6CBF00760F1E /* steps */ = {
 			isa = PBXGroup;
 			children = (
+				EE838FA81923177200FC067B /* Particle */,
 				EE276E8A19228E8E00A9DA32 /* iPad */,
 				EE318ACD191EE99B00D5A117 /* Music */,
 				EE318ACC191EE6B600D5A117 /* Images */,
@@ -389,6 +403,7 @@
 			files = (
 				EE318AF8192026DC00D5A117 /* la_linea.png in Resources */,
 				EE318AFF192026DC00D5A117 /* note6yellow.png in Resources */,
+				EE1EFD64192322C500EC9E14 /* spark.png in Resources */,
 				EE318AF5192026DC00D5A117 /* btn-easy.png in Resources */,
 				EE318AEE192026DC00D5A117 /* b-4blue.png in Resources */,
 				EE318AD3191EEF1F00D5A117 /* toto1.mp3 in Resources */,
@@ -406,6 +421,7 @@
 				EE318AF1192026DC00D5A117 /* b-2pink.png in Resources */,
 				EE318AF4192026DC00D5A117 /* b-6yellow.png in Resources */,
 				EE318AF3192026DC00D5A117 /* b-1red.png in Resources */,
+				EE1EFD63192322C500EC9E14 /* MyParticle.sks in Resources */,
 				EE318AFD192026DC00D5A117 /* note3purple.png in Resources */,
 				EEAD138E191E6CBF00760F1E /* Images.xcassets in Resources */,
 				EEAD1384191E6CBF00760F1E /* Main.storyboard in Resources */,

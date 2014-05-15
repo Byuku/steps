@@ -73,6 +73,10 @@
         }
         
         
+        
+      
+
+        
     }
     return self;
 }
@@ -92,6 +96,19 @@
     
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:location];
+    
+    if ([touchedNode.name isEqualToString:@"note"])
+    {
+        touchedNode.position = CGPointMake(touchedNode.position.x , touchedNode.position.y + 2);
+    }
+    
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -101,6 +118,23 @@
     if ([touchedNode.name isEqualToString:@"note"])
     {
         touchedNode.position = CGPointMake(touchedNode.position.x , touchedNode.position.y + 2);
+        
+        NSString *burstPath =
+        [[NSBundle mainBundle]
+         pathForResource:@"MyParticle" ofType:@"sks"];
+        
+        SKEmitterNode *burstNode =
+        [NSKeyedUnarchiver unarchiveObjectWithFile:burstPath];
+        
+        burstNode.position = CGPointMake(touchedNode.position.x, 200);
+//        burstNode.particleColorSequence = nil;
+//        burstNode.particleColorBlendFactor = 1;
+//        burstNode.particleColor = [SKColor redColor];
+        
+        
+            [burstNode runAction:[SKAction moveToY:1000 duration:3]];
+        
+        [self addChild:burstNode];
     }
 
 }
