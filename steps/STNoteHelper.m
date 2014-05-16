@@ -35,6 +35,7 @@
         randInt = (arc4random() % [buttons count]);
         newNote = [[STNoteSpriteNode alloc] initWithValue:[(STNoteSpriteNode*)buttons[randInt] value] withSound:[(STNoteSpriteNode*)buttons[randInt] soundPath]];
         newNote.alpha = 0;
+        newNote.name = @"notetmp";
         [sequence addObject:newNote];
     }
 
@@ -51,6 +52,7 @@
     STNoteSpriteNode *seqNote = [[STNoteSpriteNode alloc] initWithValue:[(STNoteSpriteNode*)notes[randInt] value] withSound:[(STNoteSpriteNode*)notes[randInt] soundPath]];
 
     seqNote.alpha = 0;
+    seqNote.name = @"notetmp";
     seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:1],
                                           [SKAction fadeOutWithDuration:2]]];
     seqNote.size = CGSizeMake(scene.frame.size.width/9 + (scene.frame.size.width/9)/10, scene.frame.size.width/9);
@@ -66,27 +68,11 @@
     for (NSUInteger i = 0; i < [sequence count]; ++i)
     {
         seqNote = (STNoteSpriteNode*)[sequence objectAtIndex:i];
-        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:i+1],
-                                              [SKAction fadeOutWithDuration:i+1]]];
+        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:i+2],
+                                              [SKAction fadeOutWithDuration:i+2]]];
     }
 }
 
-//maybe deprecated
-+ (void) randomizeSound:(NSMutableArray *) buttons
-{
-    NSUInteger randSound = 0;
-
-    NSMutableArray * sounds = [[STFileHelper listFile:@"self ENDSWITH '.mp3'"] mutableCopy];
-
-    for (NSUInteger i = 0; i < [buttons count]; ++i)
-    {
-        randSound = (arc4random() % [sounds count]);
-        
-        STNoteSpriteNode * note = [buttons objectAtIndex:i];
-        note.soundPath = sounds[randSound];
-        [sounds removeObjectAtIndex:randSound];
-    }
-}
 
 + (NSMutableArray *) createNote:(GameMode) mode :(NSMutableArray *)PNotes
 {

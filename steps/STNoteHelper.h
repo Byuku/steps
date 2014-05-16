@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "STMyScene.h"
-//#import "ModeEnum.h"
-//@class STMyScene;
+
 @interface STNoteHelper : NSObject
 
 + (void) shuffle:(NSMutableArray *) notes;
 + (NSMutableArray *) initSequence:(NSMutableArray *) buttons;
-+ (void) randomizeSound:(NSMutableArray *) buttons;
 + (NSArray *) createPianoNote:(CGRect) frame;
 + (NSMutableArray *) createNote:(GameMode) mode :(NSMutableArray *)PNote;
 + (NSArray *) createStaves:(SKSpriteNode *)pNote :(CGRect) frame;

@@ -24,29 +24,54 @@
         
         mode = level;
         SKSpriteNode * startGameText = [SKSpriteNode spriteNodeWithImageNamed:@"game-over"];
-        startGameText.position = CGPointMake(size.width * 0.45f, size.height * 0.8f);
+        startGameText.position = CGPointMake(size.width/2 - startGameText.size.width/20, size.height - size.height/6);
         [self addChild:startGameText];
         
-       SKLabelNode * playerscore = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        playerscore.text = [NSString stringWithFormat:@"%ld",(long)player_score];
-        playerscore.fontColor = [SKColor whiteColor];
-        playerscore.position = CGPointMake(self.size.width * 0.51f, size.height * 0.55f);
-        [self addChild:playerscore];
         
        SKSpriteNode * retryButton = [SKSpriteNode spriteNodeWithImageNamed:@"btn-retry"];
         retryButton.name = @"retry";
         [retryButton setScale:0.6];
-        retryButton.position = CGPointMake(size.width * 0.51f, size.height * 0.4f);
+        retryButton.position = CGPointMake(size.width * 0.51f, size.height * 0.3f);
         [self addChild:retryButton];
         
        SKSpriteNode * menuButton = [SKSpriteNode spriteNodeWithImageNamed:@"btn-menu"];
         menuButton.name = @"menu";
         [menuButton setScale:0.6];
-        menuButton.position = CGPointMake(size.width * 0.51f, size.height * 0.2f);
+        menuButton.position = CGPointMake(size.width * 0.51f, size.height * 0.1f);
         [self addChild:menuButton];
+        
+        SKLabelNode * playerscore = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        playerscore.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        playerscore.text = [NSString stringWithFormat:@"Score  %ld",(long)player_score];
+        playerscore.fontColor = [SKColor whiteColor];
+        playerscore.position = CGPointMake(self.size.width/2 - menuButton.size.width/2, size.height * 0.57f);
+        [self addChild:playerscore];
+        
+        
+        
+        NSUInteger bestcore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"bestscore"] integerValue];
+
+        if (player_score > bestcore)
+        {
+            bestcore = player_score;
+            [self saveScore:player_score];
+        }
+        
+        SKLabelNode * labelBestScore = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        labelBestScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+        labelBestScore.text = [NSString stringWithFormat:@"Best  %ld", bestcore];
+        labelBestScore.fontColor = [SKColor whiteColor];
+        labelBestScore.position = CGPointMake(self.size.width/2 - menuButton.size.width/2, size.height * 0.45f);
+        [self addChild:labelBestScore];
+
         
     }
     return self;
+}
+
+- (void) saveScore:(NSUInteger)score
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:score] forKey:@"bestscore"];
 }
 
 
