@@ -7,7 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "ModeEnum.h"
 
 @interface STMyScene : SKScene
+
+-(id)initWithSize:(CGSize)size mode:(GameMode) mode;
+
 
 @end

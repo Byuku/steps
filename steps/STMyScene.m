@@ -7,10 +7,10 @@
 //
 
 #import "STMyScene.h"
-#import "STNoteHelper.h"
 #import "STNoteSpriteNode.h"
-
+#import "STNoteHelper.h"
 #import "STFileHelper.h"
+#import "STGameOverScene.h"
 
 @implementation STMyScene
 {
@@ -18,13 +18,13 @@
     NSMutableArray * sequence;
     NSUInteger indexSeq;
     NSUInteger score;
+    GameMode mode;
 }
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size mode:(GameMode) level {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
-        GameMode mode = MEDIUM;
+        mode = level;
         
         [self displayBackground];
         [self displayScore:mode];
@@ -75,15 +75,17 @@
                 }
             }
             else
-            {
-                NSLog(@"GameOver");
+            {                
+                SKTransition *reveal = [SKTransition fadeWithColor:[UIColor grayColor] duration:0.5];
+                STGameOverScene *scene = [[STGameOverScene alloc] initWithSize:self.view.bounds.size mode:mode score:score];
+                scene.scaleMode = SKSceneScaleModeAspectFill;
+                [self.view presentScene:scene transition: reveal];
             }
             
             
 
             
         }
-    
     
 }
 
@@ -97,7 +99,7 @@
     [self addChild:background];
 }
 
--(void)displayScore:(GameMode)mode {
+-(void)displayScore:(GameMode)level {
     
     score = 0;
     
@@ -112,7 +114,7 @@
     [self addChild:labelScore];
     
     SKLabelNode *labelMode = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
-    labelMode.text = (mode == EASY) ? @"Easy" : (mode == MEDIUM) ? @"Medium" : @"Hard";
+    labelMode.text = (level == EASY) ? @"Easy" : (level == NORMAL) ? @"Normal" : @"Hard";
     labelMode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     labelMode.fontSize = self.frame.size.height/25;
     labelMode.fontColor = [SKColor whiteColor];
@@ -121,7 +123,7 @@
 
 }
 
-- (void) displayGame:(GameMode)mode
+- (void) displayGame:(GameMode)level
 {
     NSArray * Pnotes = [STNoteHelper createPianoNote:self.frame];
     
@@ -129,7 +131,7 @@
         [self addChild:[Pnotes objectAtIndex:i]];
     }
     
-    notes = [STNoteHelper createNote:mode :[Pnotes mutableCopy]];
+    notes = [STNoteHelper createNote:level :[Pnotes mutableCopy]];
     
     for (NSInteger i = 0; i < [notes count] ; ++i) {
         [self addChild:[notes objectAtIndex:i]];

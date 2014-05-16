@@ -38,6 +38,9 @@
 		EE318B051920440D00D5A117 /* toto4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318B011920440D00D5A117 /* toto4.mp3 */; };
 		EE318B061920440D00D5A117 /* toto5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318B021920440D00D5A117 /* toto5.mp3 */; };
 		EE318B071920440D00D5A117 /* toto6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE318B031920440D00D5A117 /* toto6.mp3 */; };
+		EEAA8BBD192580DC0089373F /* STGameStartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAA8BBA192580DC0089373F /* STGameStartScene.m */; };
+		EEAA8BC01925816E0089373F /* btn-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA8BBE1925816E0089373F /* btn-menu.png */; };
+		EEAA8BC11925816E0089373F /* btn-retry.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA8BBF1925816E0089373F /* btn-retry.png */; };
 		EEAD136F191E6CBF00760F1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD136E191E6CBF00760F1E /* Foundation.framework */; };
 		EEAD1371191E6CBF00760F1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1370191E6CBF00760F1E /* CoreGraphics.framework */; };
 		EEAD1373191E6CBF00760F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1372191E6CBF00760F1E /* UIKit.framework */; };
@@ -54,6 +57,9 @@
 		EEAD1397191E6CC000760F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAD1372191E6CBF00760F1E /* UIKit.framework */; };
 		EEAD139F191E6CC000760F1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEAD139D191E6CC000760F1E /* InfoPlist.strings */; };
 		EEAD13A1191E6CC000760F1E /* stepsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAD13A0191E6CC000760F1E /* stepsTests.m */; };
+		EED7A5A11926860B00F55D19 /* STGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EED7A5A01926860B00F55D19 /* STGameOverScene.m */; };
+		EEE9D7A619258C6500704144 /* game-over.png in Resources */ = {isa = PBXBuildFile; fileRef = EEE9D7A419258C6500704144 /* game-over.png */; };
+		EEE9D7A719258C6500704144 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEE9D7A519258C6500704144 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,11 @@
 		EE318B011920440D00D5A117 /* toto4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto4.mp3; sourceTree = "<group>"; };
 		EE318B021920440D00D5A117 /* toto5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto5.mp3; sourceTree = "<group>"; };
 		EE318B031920440D00D5A117 /* toto6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toto6.mp3; sourceTree = "<group>"; };
+		EEAA8BB9192580DC0089373F /* STGameStartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGameStartScene.h; sourceTree = "<group>"; };
+		EEAA8BBA192580DC0089373F /* STGameStartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGameStartScene.m; sourceTree = "<group>"; };
+		EEAA8BBE1925816E0089373F /* btn-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-menu.png"; sourceTree = "<group>"; };
+		EEAA8BBF1925816E0089373F /* btn-retry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-retry.png"; sourceTree = "<group>"; };
+		EEAA8BC21925863E0089373F /* ModeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModeEnum.h; sourceTree = "<group>"; };
 		EEAD136B191E6CBF00760F1E /* steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAD136E191E6CBF00760F1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEAD1370191E6CBF00760F1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,6 +134,10 @@
 		EEAD139C191E6CC000760F1E /* stepsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "stepsTests-Info.plist"; sourceTree = "<group>"; };
 		EEAD139E191E6CC000760F1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEAD13A0191E6CC000760F1E /* stepsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stepsTests.m; sourceTree = "<group>"; };
+		EED7A59F1926860B00F55D19 /* STGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGameOverScene.h; sourceTree = "<group>"; };
+		EED7A5A01926860B00F55D19 /* STGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGameOverScene.m; sourceTree = "<group>"; };
+		EEE9D7A419258C6500704144 /* game-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-over.png"; sourceTree = "<group>"; };
+		EEE9D7A519258C6500704144 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +184,12 @@
 		EE318AB6191E825F00D5A117 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				EED7A59F1926860B00F55D19 /* STGameOverScene.h */,
+				EED7A5A01926860B00F55D19 /* STGameOverScene.m */,
 				EEAD1388191E6CBF00760F1E /* STMyScene.h */,
 				EEAD1389191E6CBF00760F1E /* STMyScene.m */,
+				EEAA8BB9192580DC0089373F /* STGameStartScene.h */,
+				EEAA8BBA192580DC0089373F /* STGameStartScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -198,7 +217,11 @@
 		EE318ACC191EE6B600D5A117 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EEE9D7A419258C6500704144 /* game-over.png */,
+				EEE9D7A519258C6500704144 /* logo.png */,
 				EE276E8819228C0B00A9DA32 /* bg2.png */,
+				EEAA8BBE1925816E0089373F /* btn-menu.png */,
+				EEAA8BBF1925816E0089373F /* btn-retry.png */,
 				EE318ADC192026DC00D5A117 /* b-4blue.png */,
 				EE318ADD192026DC00D5A117 /* b-5green.png */,
 				EE318ADE192026DC00D5A117 /* b-7orange.png */,
@@ -288,6 +311,7 @@
 				EE318AB5191E825400D5A117 /* Controller */,
 				EEAD137F191E6CBF00760F1E /* STAppDelegate.h */,
 				EEAD1380191E6CBF00760F1E /* STAppDelegate.m */,
+				EEAA8BC21925863E0089373F /* ModeEnum.h */,
 				EEAD1382191E6CBF00760F1E /* Main.storyboard */,
 				EEAD138D191E6CBF00760F1E /* Images.xcassets */,
 				EEAD1377191E6CBF00760F1E /* Supporting Files */,
@@ -403,9 +427,12 @@
 			files = (
 				EE318AF8192026DC00D5A117 /* la_linea.png in Resources */,
 				EE318AFF192026DC00D5A117 /* note6yellow.png in Resources */,
+				EEAA8BC11925816E0089373F /* btn-retry.png in Resources */,
 				EE1EFD64192322C500EC9E14 /* spark.png in Resources */,
 				EE318AF5192026DC00D5A117 /* btn-easy.png in Resources */,
 				EE318AEE192026DC00D5A117 /* b-4blue.png in Resources */,
+				EEE9D7A719258C6500704144 /* logo.png in Resources */,
+				EEAA8BC01925816E0089373F /* btn-menu.png in Resources */,
 				EE318AD3191EEF1F00D5A117 /* toto1.mp3 in Resources */,
 				EE318AF2192026DC00D5A117 /* b-3purple.png in Resources */,
 				EE318B041920440D00D5A117 /* toto7.mp3 in Resources */,
@@ -430,6 +457,7 @@
 				EE318AF0192026DC00D5A117 /* b-7orange.png in Resources */,
 				EE318AF7192026DC00D5A117 /* btn-normal.png in Resources */,
 				EE318AD1191EE9AA00D5A117 /* toto2.mp3 in Resources */,
+				EEE9D7A619258C6500704144 /* game-over.png in Resources */,
 				EE318AFC192026DC00D5A117 /* note2pink.png in Resources */,
 				EE318B071920440D00D5A117 /* toto6.mp3 in Resources */,
 			);
@@ -450,10 +478,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA8BBD192580DC0089373F /* STGameStartScene.m in Sources */,
 				EE318AC1191EDBFD00D5A117 /* STFileHelper.m in Sources */,
 				EE318ABA191E832F00D5A117 /* STNoteHelper.m in Sources */,
 				EE318ABE191EB23D00D5A117 /* STNoteSpriteNode.m in Sources */,
 				EEAD1387191E6CBF00760F1E /* STViewController.m in Sources */,
+				EED7A5A11926860B00F55D19 /* STGameOverScene.m in Sources */,
 				EEAD138A191E6CBF00760F1E /* STMyScene.m in Sources */,
 				EEAD137D191E6CBF00760F1E /* main.m in Sources */,
 				EEAD1381191E6CBF00760F1E /* STAppDelegate.m in Sources */,

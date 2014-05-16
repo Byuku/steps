@@ -92,7 +92,7 @@
 {
     NSMutableArray * buttons = [[NSMutableArray alloc] init];
     
-    NSUInteger n = (mode == EASY) ? 3 : (mode == MEDIUM) ? 5 : 7;
+    NSUInteger n = (mode == EASY) ? 3 : (mode == NORMAL) ? 5 : 7;
     NSUInteger randSound = 0;
     NSUInteger randNote = 0;
     

@@ -9,14 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "STMyScene.h"
-
+//#import "ModeEnum.h"
+//@class STMyScene;
 @interface STNoteHelper : NSObject
-
-typedef enum {
-    EASY = 0,
-    MEDIUM,
-    HARD,
-}GameMode;
 
 + (void) shuffle:(NSMutableArray *) notes;
 + (NSMutableArray *) initSequence:(NSMutableArray *) buttons;
