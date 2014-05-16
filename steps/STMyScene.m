@@ -205,6 +205,18 @@
         randX = (arc4random() % ((NSUInteger)self.frame.size.width - (NSUInteger)seqNote.size.width/2 - (NSUInteger)seqNote.size.width/2)) + (NSUInteger)seqNote.size.width/2;
         randY = (arc4random() % ((NSUInteger)self.frame.size.height/2 - (NSUInteger)seqNote.size.height/2 - (NSUInteger)seqNote.size.height/2)) + (NSUInteger)seqNote.size.height/2;
 
+        NSUInteger count = 0;
+        
+        while(![STNoteHelper checkPositionNote:randX :randY :sequence])
+        {
+            randX = (arc4random() % ((NSUInteger)self.frame.size.width - (NSUInteger)seqNote.size.width/2 - (NSUInteger)seqNote.size.width/2)) + (NSUInteger)seqNote.size.width/2;
+            randY = (arc4random() % ((NSUInteger)self.frame.size.height/2 - (NSUInteger)seqNote.size.height/2 - (NSUInteger)seqNote.size.height/2)) + (NSUInteger)seqNote.size.height/2;
+            if (count == 10)
+                break;
+            ++count;
+        }
+        
+       // NSLog(@"Count -> %ld", count);
         seqNote.position = CGPointMake(randX,self.frame.size.height/2 + randY);
         
         [seqNote runAction:seqNote.action];

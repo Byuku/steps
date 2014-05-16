@@ -49,7 +49,7 @@
         
         
         
-        NSUInteger bestcore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"bestscore"] integerValue];
+        NSUInteger bestcore = [[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"bestscore%u", mode]] integerValue];
 
         if (player_score > bestcore)
         {
@@ -71,7 +71,7 @@
 
 - (void) saveScore:(NSUInteger)score
 {
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:score] forKey:@"bestscore"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:score] forKey:[NSString stringWithFormat:@"bestscore%u", mode]];
 }
 
 

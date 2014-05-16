@@ -19,6 +19,6 @@
 + (NSArray *) createStaves:(SKSpriteNode *)pNote :(CGRect) frame;
 + (void) addNoteIntoSequence:(NSMutableArray *)notes withSequence:(NSMutableArray *)sequence withScene:(STMyScene *)scene;
 + (void)updateActionIntoSequence:(NSMutableArray *)sequence;
-
++ (BOOL) checkPositionNote:(NSUInteger)x :(NSUInteger)y :(NSMutableArray*)notes;
 
 @end

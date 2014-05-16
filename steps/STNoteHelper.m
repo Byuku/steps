@@ -166,6 +166,23 @@
     return [NSArray arrayWithArray:array];
 }
 
++ (BOOL) checkPositionNote:(NSUInteger)x :(NSUInteger)y :(NSMutableArray*)notes
+{
+
+    
+    for (STNoteSpriteNode * node in notes)
+    {
+    
+        if ((x < node.position.x + node.size.width/2 && x > node.position.x) || (x < node.position.x && x > node.position.x - node.size.width/2))
+            return FALSE;
+        
+        if ((y < node.position.y + node.size.height/2 && y > node.position.y) || (y < node.position.y && y > node.position.y - node.size.height/2))
+            return FALSE;
+    }
+    
+    return TRUE;
+    
+}
 
 
 
