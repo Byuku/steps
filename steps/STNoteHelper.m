@@ -84,9 +84,7 @@
     
     NSMutableArray * sounds = [[STFileHelper listFile:@"self ENDSWITH '.mp3'"] mutableCopy];
     NSMutableArray * imageButton = [[STFileHelper listFile:@"self contains[c] 'note' AND self ENDSWITH '.png'"] mutableCopy];
-    
-    NSLog(@"%@",sounds);
-    
+        
     SKSpriteNode *pnote = PNotes[0];
     
     NSDictionary * positionNotes = [[NSDictionary alloc] initWithObjectsAndKeys:
