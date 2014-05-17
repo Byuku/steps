@@ -140,11 +140,11 @@
     
     SKLabelNode *labelStart = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
     labelStart.name = @"start";
-    labelStart.text = @"Get Ready !";
+    labelStart.text = @"Tap to start game !";
     labelStart.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    labelStart.fontSize = self.frame.size.height/17;
+    labelStart.fontSize = self.frame.size.height/14;
     labelStart.fontColor = [SKColor whiteColor];
-    labelStart.position = CGPointMake(self.frame.size.width/2 - self.frame.size.width/10, self.frame.size.height - self.frame.size.height/5);
+    labelStart.position = CGPointMake(self.frame.size.width/2 - self.frame.size.width/5, self.frame.size.height - self.frame.size.height/3);
     [self addChild:labelStart];
 
     
@@ -169,6 +169,21 @@
         [self addChild:[staves objectAtIndex:i]];
     }
 
+    
+    SKSpriteNode* rectangle = [[SKSpriteNode alloc] initWithImageNamed:@"b-gray"];
+    
+    rectangle.anchorPoint = CGPointMake(0, 0);
+    rectangle.position = CGPointMake(- self.frame.size.width*0.03, - self.frame.size.height*0.07);
+    rectangle.size = CGSizeMake(self.frame.size.width * 1.07, self.frame.size.height*0.62);
+    
+    rectangle.name = @"calque";
+    rectangle.zPosition = 3;
+    rectangle.alpha = 0.5;
+    rectangle.hidden = NO;
+    
+    [self addChild:rectangle];
+
+    
 }
 
 - (void) initSequenceIntoScene:(NSMutableArray *)arraySeq
@@ -216,13 +231,12 @@
             ++count;
         }
         
-       // NSLog(@"Count -> %ld", count);
         seqNote.position = CGPointMake(randX,self.frame.size.height/2 + randY);
         
         [seqNote runAction:seqNote.action];
         
     }
-    
+
     [self runAction:[SKAction sequence:seqAction]];
 
 
@@ -233,10 +247,23 @@
 {
     /* Called before each frame is rendered */
 
-    if ([self hasActions] == TRUE)
-        [self setUserInteractionEnabled:NO];
-    else
-        [self setUserInteractionEnabled:YES];
+  SKShapeNode * calque = (SKShapeNode *)[self childNodeWithName:@"calque"];
+
+    if (calque)
+    {
+        if ([self hasActions] == TRUE)
+        {
+            calque.hidden = NO;
+            calque.zPosition = 3;
+            [self setUserInteractionEnabled:NO];
+        }
+        else
+        {
+            calque.hidden = YES;
+            calque.zPosition = -2;
+            [self setUserInteractionEnabled:YES];
+        }
+    }
 }
 
 @end
