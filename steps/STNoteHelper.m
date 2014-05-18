@@ -68,8 +68,8 @@
     for (NSUInteger i = 0; i < [sequence count]; ++i)
     {
         seqNote = (STNoteSpriteNode*)[sequence objectAtIndex:i];
-        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:i+2],
-                                              [SKAction fadeOutWithDuration:i+2]]];
+        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:1],
+                                              [SKAction fadeOutWithDuration:2]]];
     }
 }
 

@@ -194,8 +194,8 @@
     {
         seqNote = (STNoteSpriteNode*)[arraySeq objectAtIndex:i];
         seqNote.alpha = 0;
-        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:i+2],
-                                              [SKAction fadeOutWithDuration:i+2]]];
+        seqNote.action = [SKAction sequence:@[[SKAction fadeInWithDuration:1],
+                                              [SKAction fadeOutWithDuration:2]]];
         
         seqNote.size = CGSizeMake(self.frame.size.width/9 + (self.frame.size.width/9)/10, self.frame.size.width/9);
         [self addChild:seqNote];
@@ -210,17 +210,18 @@
     STNoteSpriteNode *seqNote;
     NSUInteger randX = 0;
     NSUInteger randY = 0;
+    SKAction *action;
+    NSUInteger count;
+
     
     for (NSUInteger i = 0; i < [arraySeq count]; ++i)
     {
         seqNote = (STNoteSpriteNode*)[arraySeq objectAtIndex:i];
-        [seqAction addObject:[SKAction playSoundFileNamed:seqNote.soundPath waitForCompletion:YES]];
-       
         
         randX = (arc4random() % ((NSUInteger)self.frame.size.width - (NSUInteger)seqNote.size.width/2 - (NSUInteger)seqNote.size.width/2)) + (NSUInteger)seqNote.size.width/2;
         randY = (arc4random() % ((NSUInteger)self.frame.size.height/2 - (NSUInteger)seqNote.size.height/2 - (NSUInteger)seqNote.size.height/2)) + (NSUInteger)seqNote.size.height/2;
 
-        NSUInteger count = 0;
+        count = 0;
         
         while(![STNoteHelper checkPositionNote:randX :randY :sequence])
         {
@@ -233,8 +234,12 @@
         
         seqNote.position = CGPointMake(randX,self.frame.size.height/2 + randY);
         
-        [seqNote runAction:seqNote.action];
+         action = [SKAction group:@[[SKAction playSoundFileNamed:seqNote.soundPath waitForCompletion:YES], [SKAction runBlock:^(){
+            [seqNote runAction:[SKAction sequence:@[[SKAction fadeInWithDuration:1],[SKAction fadeOutWithDuration:1]]]];
+        }]]];
         
+        [seqAction addObject:action];
+
     }
 
     [self runAction:[SKAction sequence:seqAction]];
